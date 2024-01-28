@@ -192,6 +192,11 @@ function buyHealth() {
     }
 }
 
+/**
+ * Function to buy weapon
+ * If you already have all the weapons in the game, you cannot buy more
+ * weapons, but you are given the option to sell your weapon.
+ */
 function buyWeapon() {
     if (currentWeapon < weapons.length - 1) {
         if (gold >= 30) {
@@ -212,6 +217,9 @@ function buyWeapon() {
     }
 }
 
+/**
+ * Sell weapon function
+ */
 function sellWeapon() {
     if (inventory.length > 1) {
         gold += 15;
@@ -224,6 +232,12 @@ function sellWeapon() {
     }
 }
 
+/**
+ * Helper function for fighting monsters
+ * 0 = slime
+ * 1 = beast
+ * 2 = dragon
+ */
 function fightSlime() {
     fighting = 0;
     goFight();
@@ -239,6 +253,11 @@ function fightDragon() {
     goFight();
 }
 
+/**
+ * Attack function
+ * Fighting the monster you have a chance of hitting or missing the monster.
+ * There is a chance your weapon might break
+ */
 function attack() {
     text.innerText = "The " + monsters[fighting].name + " attacks.";
     text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
@@ -261,6 +280,12 @@ function attack() {
     }
 }
 
+/**
+ * @param {*} level 
+ * @returns hit - the amount of damage the monster does to the player
+ * This function calculates the damage of a monster based on its level
+ * and the player's xp.
+ */
 function getMonsterAttackValue(level) {
     const hit = (level * 5) - (Math.floor(Math.random() * xp));
     console.log(hit);
@@ -295,6 +320,12 @@ function pickEight() {
     pick(8);
 }
 
+/**
+ * 
+ * @param {*} guess 
+ * Easter egg function which allows the player to win some gold or lose
+ * some health.
+ */
 function pick(guess) {
     const numbers = [];
     while (numbers.length < 10) {

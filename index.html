@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./styles.css">
+    <title>RPG - Dragon Repeller</title>
+</head>
+
+<body>
+    <!-- Holds the general box of the game -->
+    <div id="game">
+        <!-- Holds the stats section of the game -->
+        <div id="stats">
+            <span class="stat">XP: <strong><span id="xpText">0</span></strong></span>
+            <span class="stat">Health: <strong><span id="healthText">100</span></strong></span>
+            <span class="stat">Gold: <strong><span id="goldText">50</span></strong></span>
+        </div>
+
+        <!-- Holds the buttons/controls of the game -->
+        <div id="controls">
+            <button id="button1">Go to store</button>
+            <button id="button2">Go to cave</button>
+            <button id="button3">Fight dragon</button>
+        </div>
+
+        <!-- 
+        Holds the monster stats of the game.
+        It remains hidden until you start a fight with a monster.
+      -->
+        <div id="monsterStats">
+            <span class="stat">Monster Name: <strong><span id="monsterName"></span></strong></span>
+            <span class="stat">Health: <strong><span id="monsterHealth"></span></strong></span>
+        </div>
+
+        <!--
+        It holds the text of the game which changes based on the location
+        and situation the player is in.
+      -->
+        <div id="text">
+            Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town. You
+            are in the town square. Where do you want to go? Use the buttons above.
+        </div>
+    </div>
+
+    <!-- Main script to run the game-->>
+    <script src="./script.js"></script>
+</body>
+
+</html>
